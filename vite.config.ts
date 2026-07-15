@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
-import siteConfiguration from './.figma/make/site.json'
+const siteConfiguration = {}
 
 // Set only by the cached-preview build, so HTML-to-Design can map bundle frames
 // back to source. The publish/deploy build never sets it → published sites don't
