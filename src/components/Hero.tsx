@@ -1,3 +1,5 @@
+import Player from "../assets/Player.jpeg";
+
 export default function Hero() {
   return (
     <section
@@ -116,7 +118,7 @@ export default function Hero() {
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Download APK
               </a>
@@ -138,7 +140,7 @@ export default function Hero() {
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                 </svg>
                 View Source
               </a>
@@ -159,7 +161,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — phone mockup */}
+          {/* Right - phone mockup */}
           <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
             {/* Glow ring */}
             <div
@@ -185,74 +187,31 @@ export default function Hero() {
               <div
                 style={{
                   width: 260,
-                  height: 520,
+                  height: 570,
                   borderRadius: 40,
                   background: 'linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f0f1a 100%)',
                   border: '1.5px solid rgba(255,255,255,0.15)',
                   boxShadow: '0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(124,58,237,0.2)',
                   position: 'relative',
                   overflow: 'hidden',
-                  padding: 16,
                 }}
               >
-                {/* Notch */}
-                <div style={{ width: 80, height: 26, borderRadius: 13, background: '#09090B', margin: '0 auto 16px' }} />
-
-                {/* Screen content — player UI */}
-                <div style={{ textAlign: 'center' }}>
-                  {/* Album art */}
-                  <div
-                    style={{
-                      width: 140,
-                      height: 140,
-                      borderRadius: 20,
-                      background: 'linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)',
-                      margin: '0 auto 16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 20px 40px rgba(124,58,237,0.4)',
-                    }}
-                  >
-                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none">
-                      <path d="M9 18V5l12-2v13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="6" cy="18" r="3" stroke="white" strokeWidth="1.5"/>
-                      <circle cx="18" cy="16" r="3" stroke="white" strokeWidth="1.5"/>
-                    </svg>
-                  </div>
-
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Midnight Dreams</div>
-                  <div style={{ fontSize: 11, color: '#A1A1AA', marginBottom: 20 }}>Artist Name</div>
-
-                  {/* Progress bar */}
-                  <div style={{ height: 3, background: 'rgba(255,255,255,0.15)', borderRadius: 2, margin: '0 8px 16px', position: 'relative' }}>
-                    <div style={{ height: '100%', width: '40%', background: 'linear-gradient(90deg, #7C3AED, #22D3EE)', borderRadius: 2 }} />
-                  </div>
-
-                  {/* Controls */}
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#A1A1AA">
-                      <path d="M19 20L9 12l10-8v16zM5 19V5h2v14H5z"/>
-                    </svg>
-                    <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'linear-gradient(135deg, #7C3AED, #6D28D9)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 20px rgba(124,58,237,0.5)' }}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#A1A1AA">
-                      <path d="M5 4l10 8-10 8V4zm14 1h-2v14h2V5z"/>
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Bottom nav bar */}
-                <div style={{ position: 'absolute', bottom: 16, left: 16, right: 16, height: 40, borderRadius: 12, background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-                  {['M12 2a10 10 0 100 20A10 10 0 0012 2z', 'M9 18V5l12-2v13M6 18a3 3 0 100-6 3 3 0 000 6z', 'M4 6h16M4 10h16M4 14h16M4 18h16', 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z'].map((d, i) => (
-                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={i === 1 ? '#7C3AED' : '#555'} strokeWidth="1.5">
-                      <path d={d} strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  ))}
-                </div>
+                {/* Screen content - real app screenshot, filling the entire outer shell */}
+                <img
+                  src={Player}
+                  alt="BeatFlow Player"
+                  draggable={false}
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    userSelect: 'none',
+                    borderRadius: 40,
+                  }}
+                />
               </div>
             </div>
 
@@ -272,7 +231,7 @@ export default function Hero() {
               }}
             >
               <div style={{ width: 28, height: 28, borderRadius: 8, background: 'linear-gradient(135deg, #7C3AED, #6D28D9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
               </div>
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, color: '#fff' }}>100% Private</div>
@@ -295,7 +254,7 @@ export default function Hero() {
               }}
             >
               <div style={{ width: 28, height: 28, borderRadius: 8, background: 'linear-gradient(135deg, #22D3EE, #0EA5E9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, color: '#fff' }}>Blazing Fast</div>
