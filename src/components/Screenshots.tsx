@@ -146,27 +146,14 @@ export default function Screenshots() {
         {/* Tabs */}
 
         <div
-          className="reveal"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 10,
-            flexWrap: "wrap",
-            marginBottom: 48,
-          }}
+          className="reveal flex justify-center flex-nowrap gap-1.5 md:gap-2.5 mb-12"
         >
           {screens.map((screen, index) => (
             <button
               key={screen.label}
               onClick={() => setActive(index)}
+              className="shrink-0 cursor-pointer rounded-full px-3 py-2.5 text-xs font-semibold transition-all duration-300 md:px-6 md:text-sm"
               style={{
-                border: "none",
-                cursor: "pointer",
-                borderRadius: 999,
-                padding: "10px 24px",
-                transition: ".3s",
-                fontWeight: 600,
-                fontSize: 14,
                 background:
                   active === index
                     ? screen.color
