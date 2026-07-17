@@ -1,3 +1,5 @@
+import DeveloperImage from "../assets/developer.png";
+
 export default function Developer() {
   return (
     <section id="developer" style={{ padding: '80px 24px' }}>
@@ -15,22 +17,19 @@ export default function Developer() {
           style={{ borderRadius: 24, padding: '40px 32px' }}
         >
           {/* Avatar */}
-          <div
+          <img
+            src={DeveloperImage}
+            alt="Mohan Singh Parmar"
+            loading="lazy"
             style={{
               width: 80,
               height: 80,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #7C3AED, #22D3EE)',
+              objectFit: 'cover',
               margin: '0 auto 20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 32,
               boxShadow: '0 0 30px rgba(124,58,237,0.4)',
             }}
-          >
-            👨‍💻
-          </div>
+          />
 
           <h3 style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginBottom: 8 }}>Mohan Singh Parmar</h3>
 
