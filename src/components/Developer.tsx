@@ -54,18 +54,6 @@ function SocialButton({ href, label, icon, hoverColor }: SocialLink) {
 export default function Developer() {
   const socialLinks: SocialLink[] = [
     {
-      href: 'https://monxcode.vercel.app/',
-      label: 'Portfolio',
-      hoverColor: '#7C3AED',
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-        </svg>
-      ),
-    },
-    {
       href: 'https://www.linkedin.com/in/mohan-singh-parmar',
       label: 'LinkedIn',
       hoverColor: '#0A66C2',
@@ -99,8 +87,6 @@ export default function Developer() {
     },
   ]
 
-  const desktopSocialLinks = socialLinks.filter(l => l.label !== 'Portfolio')
-
   return (
     <section id="developer" className="dv-root" style={{ padding: '80px 24px' }}>
       <style>{`
@@ -112,101 +98,250 @@ export default function Developer() {
           display: none;
         }
 
-        @media (max-width: 768px) {
+        .dv-mobile-inner {
+          max-width: 500px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          text-align: left;
+        }
+
+        .dv-mobile-img-wrap {
+          width: 100%;
+          align-self: center;
+          border-radius: 22px;
+          padding: 6px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(124,58,237,0.2);
+          box-shadow: 0 0 35px rgba(124,58,237,0.15);
+        }
+
+        .dv-mobile-img-wrap img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+          border-radius: 18px;
+          display: block;
+        }
+
+        .dv-mobile-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 5px 16px;
+          border-radius: 100px;
+          background: rgba(124,58,237,0.1);
+          border: 1px solid rgba(124,58,237,0.25);
+        }
+
+        .dv-mobile-badge span {
+          font-size: 11px;
+          font-weight: 700;
+          color: #A78BFA;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+        }
+
+        .dv-mobile-badge svg {
+          width: 12px;
+          height: 12px;
+        }
+
+        .dv-mobile-heading {
+          font-size: clamp(1.8rem, 5vw, 2.2rem);
+          font-weight: 900;
+          letter-spacing: -1px;
+          line-height: 1.05;
+          margin: 0;
+        }
+
+        .dv-mobile-heading .l1 {
+          display: block;
+          color: #fff;
+        }
+
+        .dv-mobile-heading .l2 {
+          display: block;
+          background: linear-gradient(135deg, #7C3AED, #22D3EE);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .dv-mobile-sub {
+          font-size: 14px;
+          font-weight: 700;
+          color: #22D3EE;
+          letter-spacing: 1.5px;
+        }
+
+        .dv-mobile-bio {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .dv-mobile-bio p {
+          color: #A1A1AA;
+          font-size: 13px;
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        .dv-mobile-bio strong {
+          color: #fff;
+          font-weight: 600;
+        }
+
+        .dv-mobile-vibe {
+          padding: 14px 18px;
+          border-radius: 14px;
+          background: rgba(124,58,237,0.06);
+          border: 1px solid rgba(124,58,237,0.18);
+          backdrop-filter: blur(10px);
+          width: 100%;
+        }
+
+        .dv-mobile-vibe-hdr {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 6px;
+        }
+
+        .dv-mobile-vibe-hdr span {
+          font-size: 14px;
+          font-weight: 800;
+          color: #fff;
+        }
+
+        .dv-mobile-vibe p {
+          font-size: 12px;
+          color: #A1A1AA;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .dv-mobile-row {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .dv-mobile-social {
+          display: flex;
+          gap: 6px;
+          flex-wrap: nowrap;
+        }
+
+        .dv-mobile-social a {
+          padding: 8px 12px !important;
+          font-size: 12px !important;
+          gap: 6px !important;
+        }
+
+        .dv-mobile-social a svg {
+          width: 14px !important;
+          height: 14px !important;
+        }
+
+        .dv-mobile-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 28px;
+          border-radius: 12px;
+          background: linear-gradient(135deg, #7C3AED, #6D28D9);
+          border: none;
+          font-size: 14px;
+          font-weight: 700;
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .dv-mobile-cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 35px rgba(124,58,237,0.45);
+        }
+
+        /* Tablet (768-1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
           .dv-root {
-            padding: 56px 16px !important;
+            padding: 80px 32px !important;
           }
-          .dv-root .dv-card {
-            padding: 28px 20px !important;
-            border-radius: 20px !important;
+          .dv-mobile-inner {
+            max-width: 600px;
+            gap: 18px !important;
           }
-          .dv-root .dv-avatar {
-            width: 64px !important;
-            height: 64px !important;
-            margin-bottom: 16px !important;
+          .dv-mobile-heading {
+            font-size: clamp(2rem, 4vw, 2.5rem) !important;
           }
-          .dv-root .dv-name {
-            font-size: 20px !important;
+          .dv-mobile-bio p {
+            font-size: 14px !important;
           }
-          .dv-root .dv-badge {
-            font-size: 11px !important;
-            padding: 3px 12px !important;
-          }
-          .dv-root .dv-badge-wrap {
-            margin-bottom: 20px !important;
-            gap: 6px !important;
-          }
-          .dv-root .dv-bio-wrap {
-            margin-bottom: 24px !important;
-          }
-          .dv-root .dv-bio-wrap p {
+          .dv-mobile-vibe p {
             font-size: 13px !important;
-            margin-bottom: 12px !important;
           }
-          .dv-root .dv-hero-badge {
-            margin-bottom: 18px !important;
-          }
-          .dv-root .dv-heading {
-            margin-bottom: 32px !important;
-          }
-          .dv-root .dv-social {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 8px !important;
-          }
-          .dv-root .dv-social a {
-            width: 100% !important;
-            padding: 12px 10px !important;
+          .dv-mobile-social a {
+            padding: 10px 16px !important;
             font-size: 13px !important;
-            justify-content: center !important;
           }
-          .dv-root .dv-social a svg {
+          .dv-mobile-social a svg {
             width: 16px !important;
             height: 16px !important;
           }
         }
 
+        /* Small phones */
         @media (max-width: 480px) {
           .dv-root {
-            padding: 48px 12px !important;
+            padding: 48px 16px !important;
           }
-          .dv-root .dv-card {
-            padding: 24px 16px !important;
-            border-radius: 16px !important;
+          .dv-mobile-inner {
+            gap: 12px !important;
           }
-          .dv-root .dv-avatar {
-            width: 56px !important;
-            height: 56px !important;
+          .dv-mobile-img-wrap {
+            padding: 4px !important;
           }
-          .dv-root .dv-name {
-            font-size: 18px !important;
+          .dv-mobile-vibe {
+            padding: 12px 14px !important;
           }
-          .dv-root .dv-bio-wrap p {
-            font-size: 12.5px !important;
+          .dv-mobile-social a {
+            padding: 6px 10px !important;
+            font-size: 11px !important;
+            gap: 4px !important;
           }
-          .dv-root .dv-social a {
-            padding: 10px 8px !important;
+          .dv-mobile-social a svg {
+            width: 12px !important;
+            height: 12px !important;
           }
         }
 
+        /* Very small phones */
         @media (max-width: 360px) {
           .dv-root {
-            padding: 40px 10px !important;
+            padding: 40px 12px !important;
           }
-          .dv-root .dv-card {
-            padding: 20px 12px !important;
+          .dv-mobile-inner {
+            gap: 10px !important;
           }
-          .dv-root .dv-social a {
-            font-size: 12px !important;
-            padding: 10px 6px !important;
+          .dv-mobile-heading {
+            font-size: 1.5rem !important;
           }
-          .dv-root .dv-social a svg {
-            width: 14px !important;
-            height: 14px !important;
-          }
-          .dv-root .dv-badge {
+          .dv-mobile-social a {
+            padding: 5px 8px !important;
             font-size: 10px !important;
-            padding: 2px 10px !important;
+            gap: 3px !important;
+          }
+          .dv-mobile-social a svg {
+            width: 11px !important;
+            height: 11px !important;
           }
         }
 
@@ -415,59 +550,72 @@ export default function Developer() {
 
       {/* ── Mobile Layout ── */}
       <div className="dv-mobile">
-        <div style={{ maxWidth: 600, margin: '0 auto', textAlign: 'center' }}>
-          <div className="dv-hero-badge reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 100, background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)', marginBottom: 24 }}>
-            <span style={{ fontSize: 12, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase' }}>The Creator</span>
-          </div>
-
-          <h2 className="dv-heading reveal" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 40 }}>
-            About the <span className="text-gradient">Developer</span>
-          </h2>
-
-          <div className="dv-card reveal glass" style={{ borderRadius: 24, padding: '40px 32px' }}>
-            {/* Avatar */}
+        <div className="dv-mobile-inner reveal">
+          <div className="dv-mobile-img-wrap">
             <img
               src={DeveloperImage}
               alt="Mohan Singh Parmar"
               loading="lazy"
-              className="dv-avatar"
-              style={{
-                width: 80,
-                height: 80,
-                borderRadius: '50%',
-                objectFit: 'cover',
-                margin: '0 auto 20px',
-                boxShadow: '0 0 30px rgba(124,58,237,0.4)',
-              }}
             />
+          </div>
 
-            <h3 className="dv-name" style={{ fontSize: 22, fontWeight: 800, color: '#fff', marginBottom: 8 }}>Mohan Singh Parmar</h3>
+          <div className="dv-mobile-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Meet the Developer</span>
+          </div>
 
-            {/* Badges */}
-            <div className="dv-badge-wrap" style={{ display: 'flex', justifyContent: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
-              <span className="dv-badge" style={{ padding: '4px 14px', borderRadius: 100, background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.25)', fontSize: 12, fontWeight: 600, color: '#22D3EE' }}>Cybersecurity Enthusiast</span>
-              <span className="dv-badge" style={{ padding: '4px 14px', borderRadius: 100, background: 'rgba(236,72,153,0.1)', border: '1px solid rgba(236,72,153,0.25)', fontSize: 12, fontWeight: 600, color: '#F472B6' }}>AI Enthusiast</span>
+          <h1 className="dv-mobile-heading">
+            <span className="l1">Mohan Singh</span>
+            <span className="l2">Parmar</span>
+          </h1>
+
+          <div className="dv-mobile-sub">Cybersecurity Enthusiast</div>
+
+          <div className="dv-mobile-bio">
+            <p>
+              I am a <strong>Cybersecurity Learner</strong> and <strong>AI Enthusiast</strong> passionate about building secure, efficient, and beautifully designed software. I believe great products respect user privacy while delivering a premium experience.
+            </p>
+            <p>
+              BeatFlow was built using AI-assisted development combined with personal ideas, design decisions, testing, and customization to create a polished, production-ready offline music experience.
+            </p>
+          </div>
+
+          <div className="dv-mobile-vibe">
+            <div className="dv-mobile-vibe-hdr">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              <span>100% Vibe Coded</span>
             </div>
+            <p>
+              BeatFlow was built using AI-assisted development combined with personal ideas, design decisions, testing, and customization to create a polished, production-ready application.
+            </p>
+          </div>
 
-            {/* Bio */}
-            <div className="dv-bio-wrap" style={{ textAlign: 'left', marginBottom: 28 }}>
-              <p style={{ color: '#D4D4D8', fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-                I am a <strong style={{ color: '#fff', fontWeight: 600 }}>Cybersecurity Learner</strong> and <strong style={{ color: '#fff', fontWeight: 600 }}>AI Enthusiast</strong> with a deep passion for modern software development. I enjoy exploring how technology can be used to build secure, efficient, and beautifully designed applications that respect user privacy.
-              </p>
-              <p style={{ color: '#D4D4D8', fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-                BeatFlow is a passion project that I built from the ground up to deliver a clean, fast, and privacy-first offline music experience. The entire project was <strong style={{ color: '#fff', fontWeight: 600 }}>fully vibe coded</strong> — combining AI-assisted development with my own ideas, design decisions, testing, and customization to create something truly polished.
-              </p>
-              <p style={{ color: '#D4D4D8', fontSize: 14, lineHeight: 1.8 }}>
-                I believe the best products are those that are both functional and visually refined. Every detail in BeatFlow — from the AMOLED interface to the glassmorphism effects — was crafted with care to deliver a premium, distraction-free listening experience.
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="dv-social" style={{ display: 'flex', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
+          <div className="dv-mobile-row">
+            <div className="dv-mobile-social">
               {socialLinks.map((link) => (
                 <SocialButton key={link.label} {...link} />
               ))}
             </div>
+
+            <a
+              href="https://monxcode.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dv-mobile-cta"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Visit Portfolio
+            </a>
           </div>
         </div>
       </div>
@@ -532,7 +680,7 @@ export default function Developer() {
                 {/* Social + CTA */}
                 <div className="dv-desk-row">
                   <div className="dv-desk-social">
-                    {desktopSocialLinks.map((link) => (
+                    {socialLinks.map((link) => (
                       <SocialButton key={link.label} {...link} />
                     ))}
                   </div>
