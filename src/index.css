@@ -11,14 +11,54 @@
   --color-border: rgba(255, 255, 255, 0.12);
 }
 
+:root {
+  /* Font stack */
+  --ff-sans: 'Inter', system-ui, sans-serif;
+
+  /* Hero Title */
+  --fs-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --fw-hero: 800;
+  --lh-hero: 1.05;
+  --ls-hero: -0.02em;
+
+  /* Section Titles */
+  --fs-section: clamp(1.5rem, 3vw, 2.5rem);
+  --fw-section: 800;
+  --lh-section: 1.15;
+  --ls-section: -0.015em;
+
+  /* Card Titles */
+  --fs-card: 1.125rem;
+  --fw-card: 700;
+  --lh-card: 1.3;
+
+  /* Body Text */
+  --fs-body: 0.9375rem;
+  --fw-body: 400;
+  --lh-body: 1.7;
+
+  /* Small Labels */
+  --fs-label: 0.75rem;
+  --fw-label: 600;
+  --lh-label: 1.4;
+  --ls-label: 0.05em;
+
+  /* Buttons */
+  --fs-button: 0.875rem;
+  --fw-button: 600;
+  --lh-button: 1;
+}
+
 html {
+  font-family: var(--ff-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 
 body {
   background-color: #09090B;
   color: #FFFFFF;
-  font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
 }
 
