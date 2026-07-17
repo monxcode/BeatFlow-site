@@ -217,18 +217,7 @@ export default function Hero() {
 
             {/* Floating glass cards */}
             <div
-              className="floating glass"
-              style={{
-                position: 'absolute',
-                top: '10%',
-                right: '-5%',
-                padding: '10px 14px',
-                borderRadius: 12,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                minWidth: 130,
-              }}
+              className="floating absolute top-[10%] right-[-5%] p-[10px_14px] rounded-xl flex items-center gap-2 min-w-[130px] bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl shadow-purple-500/5"
             >
               <div style={{ width: 28, height: 28, borderRadius: 8, background: 'linear-gradient(135deg, #7C3AED, #6D28D9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
@@ -240,18 +229,7 @@ export default function Hero() {
             </div>
 
             <div
-              className="floating-fast glass"
-              style={{
-                position: 'absolute',
-                bottom: '15%',
-                left: '-8%',
-                padding: '10px 14px',
-                borderRadius: 12,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                minWidth: 120,
-              }}
+              className="floating-fast absolute bottom-[15%] left-[-8%] p-[10px_14px] rounded-xl flex items-center gap-2 min-w-[120px] bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl shadow-cyan-500/5"
             >
               <div style={{ width: 28, height: 28, borderRadius: 8, background: 'linear-gradient(135deg, #22D3EE, #0EA5E9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round" /></svg>
