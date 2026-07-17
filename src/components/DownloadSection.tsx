@@ -76,7 +76,7 @@ export default function DownloadSection() {
           <a
             href="/BeatFlow.apk"
             download="BeatFlow.apk"
-            className="btn-primary ripple"
+            className="btn-primary ripple max-md:!flex max-md:!w-full max-md:justify-center"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
