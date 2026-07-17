@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Home from "../assets/Home.jpeg";
 import Player from "../assets/Player.jpeg";
@@ -30,6 +30,58 @@ const screens = [
 
 export default function Screenshots() {
   const [active, setActive] = useState(0);
+  const phoneRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const isMobileRef = useRef(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      isMobileRef.current = window.innerWidth < 768;
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let mostVisibleIndex = -1;
+        let maxRatio = 0;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            mostVisibleIndex = screens.findIndex(
+              (_, i) => phoneRefs.current[i] === entry.target
+            );
+          }
+        });
+
+        if (mostVisibleIndex !== -1 && mostVisibleIndex !== active) {
+          setActive(mostVisibleIndex);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    observerRef.current = observer;
+    phoneRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      phoneRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [active]);
 
   return (
     <section id="screenshots" style={{ padding: "100px 24px" }}>
@@ -139,6 +191,7 @@ export default function Screenshots() {
           {screens.map((screen, index) => (
             <div
               key={screen.label}
+              ref={(el) => (phoneRefs.current[index] = el)}
               onClick={() => setActive(index)}
               onMouseEnter={() => setActive(index)}
               style={{
