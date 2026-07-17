@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Preloader from './components/Preloader'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import SmartScan from './components/SmartScan'
@@ -26,6 +27,15 @@ export default function App() {
 function AppContent() {
   const location = useLocation()
   const [scrollProgress, setScrollProgress] = useState(0)
+  const preloaderShown = useRef(false)
+  const [showPreloader, setShowPreloader] = useState(
+    location.pathname === '/' && !preloaderShown.current
+  )
+
+  const handlePreloaderFinish = () => {
+    preloaderShown.current = true
+    setShowPreloader(false)
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -56,6 +66,7 @@ function AppContent() {
 
   return (
     <div style={{ backgroundColor: '#09090B', minHeight: '100vh' }}>
+      {showPreloader && <Preloader onFinish={handlePreloaderFinish} />}
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
       <Routes>
         <Route path="/" element={<HomePage />} />
