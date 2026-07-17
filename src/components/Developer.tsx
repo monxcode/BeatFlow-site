@@ -124,6 +124,12 @@ export default function Developer() {
           object-fit: cover;
           border-radius: 18px;
           display: block;
+          transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .dv-mobile-img-wrap:hover img {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 20px 60px rgba(124,58,237,0.35);
         }
 
         .dv-mobile-badge {
@@ -395,7 +401,7 @@ export default function Developer() {
           }
 
           .dv-desk-img:hover img {
-            transform: scale(1.02);
+            transform: translateY(-4px) scale(1.03);
           }
 
           .dv-desk-content {
