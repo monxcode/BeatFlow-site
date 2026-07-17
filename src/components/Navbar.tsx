@@ -1,19 +1,70 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '@/imports/logo.png'
 
 const links = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', href: '/#home' },
   { label: 'Features', href: '/#features' },
   { label: 'Screenshots', href: '/#screenshots' },
-  { label: 'Download', href: '/#download' },
   { label: 'Developer', href: '/#developer' },
+  { label: 'Download', href: '/#download' },
 ]
+
+const sectionIds = ['home', 'features', 'screenshots', 'developer', 'download']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+  const prevActiveRef = useRef('')
 
+  // Scroll spy
+  useEffect(() => {
+    const getActiveSection = () => {
+      const scrollY = window.scrollY
+      const checkPoint = scrollY + window.innerHeight * 0.35
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (!el) continue
+
+        const rect = el.getBoundingClientRect()
+        const sectionTop = scrollY + rect.top
+        const sectionBottom = scrollY + rect.bottom
+
+        if (checkPoint >= sectionTop && checkPoint <= sectionBottom) {
+          if (id !== prevActiveRef.current) {
+            prevActiveRef.current = id
+            setActiveSection(id)
+          }
+          return
+        }
+      }
+
+      if (prevActiveRef.current !== '') {
+        prevActiveRef.current = ''
+        setActiveSection('')
+      }
+    }
+
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          getActiveSection()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    getActiveSection()
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Nav background change on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -23,12 +74,14 @@ export default function Navbar() {
   const handleLinkClick = (href: string) => {
     if (href.startsWith('/#')) {
       const id = href.slice(2)
-      const el = document.getElementById(id)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-      }
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     }
     setMenuOpen(false)
+  }
+
+  const isActive = (href: string) => {
+    if (href === '/') return activeSection === 'home'
+    return activeSection === href.slice(2)
   }
 
   return (
@@ -62,24 +115,29 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex" style={{ gap: 32 }}>
-          {links.map((l) => (
-            <Link
-              key={l.label}
-              to={l.href}
-              onClick={() => handleLinkClick(l.href)}
-              style={{
-                color: '#A1A1AA',
-                fontSize: 14,
-                fontWeight: 500,
-                textDecoration: 'none',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active = isActive(l.href)
+            return (
+              <Link
+                key={l.label}
+                to={l.href}
+                onClick={() => handleLinkClick(l.href)}
+                style={{
+                  color: active ? '#fff' : '#A1A1AA',
+                  fontSize: 14,
+                  fontWeight: active ? 600 : 500,
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => {
+                  if (!active) e.currentTarget.style.color = '#A1A1AA'
+                }}
+              >
+                {l.label}
+              </Link>
+            )
+          })}
           <a
             href="https://github.com/monxcode/BeatFlow"
             target="_blank"
@@ -129,16 +187,24 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.10)', display: 'flex', flexDirection: 'column', gap: 16 }}>
-          {links.map((l) => (
-            <Link
-              key={l.label}
-              to={l.href}
-              onClick={() => handleLinkClick(l.href)}
-              style={{ color: '#A1A1AA', fontSize: 15, fontWeight: 500, textDecoration: 'none' }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active = isActive(l.href)
+            return (
+              <Link
+                key={l.label}
+                to={l.href}
+                onClick={() => handleLinkClick(l.href)}
+                style={{
+                  color: active ? '#fff' : '#A1A1AA',
+                  fontSize: 15,
+                  fontWeight: active ? 600 : 500,
+                  textDecoration: 'none',
+                }}
+              >
+                {l.label}
+              </Link>
+            )
+          })}
           <a
             href="/BeatFlow.apk"
             download="BeatFlow.apk"
