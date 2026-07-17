@@ -32,12 +32,42 @@ export default function DownloadSection() {
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 36 }}>
             {[
-              { icon: '🤖', label: 'Android 10+' },
-              { icon: '📶', label: 'Works Offline' },
-              { icon: '🆓', label: 'Completely Free' },
+              {
+                icon: (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3a7 7 0 00-7 7v5a2 2 0 002 2h10a2 2 0 002-2v-5a7 7 0 00-7-7z"/>
+                    <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+                    <circle cx="15" cy="11" r="1.5" fill="currentColor"/>
+                    <path d="M8 18v3M16 18v3"/>
+                  </svg>
+                ),
+                label: 'Android 10+',
+              },
+              {
+                icon: (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="2" y1="2" x2="22" y2="22"/>
+                    <path d="M8.5 16.5a5 5 0 017 0"/>
+                    <path d="M5 13a9 9 0 0114 0"/>
+                    <path d="M1.5 9.5a13 13 0 0121 0"/>
+                  </svg>
+                ),
+                label: 'Works Offline',
+              },
+              {
+                icon: (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="8" width="18" height="4" rx="1"/>
+                    <path d="M12 8v13"/>
+                    <path d="M12 8H7.5a2.5 2.5 0 010-5C11 3 12 8 12 8z"/>
+                    <path d="M12 8h4.5a2.5 2.5 0 000-5C13 3 12 8 12 8z"/>
+                  </svg>
+                ),
+                label: 'Completely Free',
+              },
             ].map((item) => (
               <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 100, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
-                <span style={{ fontSize: 14 }}>{item.icon}</span>
+                <span style={{ display: 'flex', alignItems: 'center', color: '#22D3EE' }}>{item.icon}</span>
                 <span style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>{item.label}</span>
               </div>
             ))}
