@@ -20,7 +20,7 @@ export default function DownloadSection() {
           {/* Decorative ring */}
           <div style={{ position: 'absolute', top: -60, left: '50%', transform: 'translateX(-50%)', width: 200, height: 200, borderRadius: '50%', background: 'radial-gradient(circle, rgba(124,58,237,0.2), transparent)', pointerEvents: 'none' }} />
 
-          <img src={logo} alt="BeatFlow" style={{ width: 72, height: 72, objectFit: 'contain', margin: '0 auto 24px', display: 'block', filter: 'drop-shadow(0 0 20px rgba(0,200,100,0.4))' }} />
+          <img src={logo} alt="BeatFlow" style={{ width: 'clamp(80px, 10vw, 120px)', height: 'clamp(80px, 10vw, 120px)', objectFit: 'contain', margin: '0 auto 28px', display: 'block', filter: 'drop-shadow(0 0 30px rgba(0,200,100,0.45))' }} />
 
           <div style={{ fontSize: 13, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 12 }}>Latest Version</div>
           <h2 className="heading-font" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 8 }}>
