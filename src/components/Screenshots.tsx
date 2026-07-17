@@ -140,6 +140,7 @@ export default function Screenshots() {
             <div
               key={screen.label}
               onClick={() => setActive(index)}
+              onMouseEnter={() => setActive(index)}
               style={{
                 cursor: "pointer",
                 transition: ".35s",
