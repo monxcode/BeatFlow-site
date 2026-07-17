@@ -33,7 +33,7 @@ export default function WhyBeatFlow() {
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
               <div style={{ width: 42, height: 42, borderRadius: 12, background: 'linear-gradient(135deg, #7C3AED, #22D3EE)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="white" strokeWidth="1.8" strokeLinecap="round"/><circle cx="6" cy="18" r="3" stroke="white" strokeWidth="1.8"/><circle cx="18" cy="16" r="3" stroke="white" strokeWidth="1.8"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="white" strokeWidth="1.8" strokeLinecap="round" /><circle cx="6" cy="18" r="3" stroke="white" strokeWidth="1.8" /><circle cx="18" cy="16" r="3" stroke="white" strokeWidth="1.8" /></svg>
               </div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: 17, color: '#fff' }}>BeatFlow</div>
@@ -45,7 +45,7 @@ export default function WhyBeatFlow() {
                 <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 22, height: 22, borderRadius: 6, background: 'rgba(124,58,237,0.2)', border: '1px solid rgba(124,58,237,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="3" strokeLinecap="round">
-                      <path d="M5 13l4 4L19 7"/>
+                      <path d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <span style={{ fontSize: 14, fontWeight: 600, color: '#fff' }}>{item.label}</span>
@@ -69,7 +69,7 @@ export default function WhyBeatFlow() {
                 <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 22, height: 22, borderRadius: 6, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#52525B" strokeWidth="2.5" strokeLinecap="round">
-                      <path d="M18 6L6 18M6 6l12 12"/>
+                      <path d="M18 6L6 18M6 6l12 12" />
                     </svg>
                   </div>
                   <span style={{ fontSize: 14, color: '#52525B', textDecoration: 'line-through' }}>{item}</span>

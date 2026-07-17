@@ -74,7 +74,7 @@ export default function FAQ() {
                     strokeWidth="2.5"
                     style={{ transition: 'transform 0.3s', transform: open === i ? 'rotate(180deg)' : 'none' }}
                   >
-                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </button>

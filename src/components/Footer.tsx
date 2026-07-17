@@ -88,7 +88,7 @@ export default function Footer() {
               }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Download APK
             </a>
@@ -128,7 +128,7 @@ export default function Footer() {
             onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(124,58,237,0.1)')}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M18 15l-6-6-6 6" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 15l-6-6-6 6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Back to top
           </button>
