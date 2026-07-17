@@ -80,7 +80,7 @@ export default function Navbar() {
         {/* CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <a
-            href="app/BeatFlow.apk"
+            href="/BeatFlow.apk"
             download="BeatFlow.apk"
             className="btn-primary ripple hidden md:block"
             style={{
@@ -125,7 +125,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="app/BeatFlow.apk"
+            href="/BeatFlow.apk"
             download="BeatFlow.apk"
             className="btn-primary ripple"
             style={{ padding: '10px 20px', borderRadius: 10, fontSize: 14, fontWeight: 600, color: '#fff', textDecoration: 'none', textAlign: 'center' }}

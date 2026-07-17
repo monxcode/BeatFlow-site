@@ -53,7 +53,7 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 16 }}>Get The App</div>
             <a
-              href="app/BeatFlow.apk"
+              href="/BeatFlow.apk"
               download="BeatFlow.apk"
               className="btn-primary"
               style={{

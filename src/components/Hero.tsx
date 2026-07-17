@@ -102,7 +102,7 @@ export default function Hero() {
 
             <div className="reveal" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a
-                href="app/BeatFlow.apk"
+                href="/BeatFlow.apk"
                 download="BeatFlow.apk"
                 className="btn-primary ripple"
                 style={{
