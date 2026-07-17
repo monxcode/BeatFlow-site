@@ -1,63 +1,46 @@
-# BeatFlow Site
+# BeatFlow Website
 
-Official landing page for **BeatFlow** — a premium offline music player for Android, built with privacy and speed in mind.
+The official landing page for BeatFlow, a premium offline music player for Android built with privacy and speed at its core.
 
-## Tech Stack
+## Overview
 
-- **React 19** + TypeScript
-- **Vite 8** (build tool)
-- **React Router v7** (client-side routing)
-- **Tailwind CSS v4** (utility-first CSS)
-- **React 19 Strict Mode**
-
-## Pages
-
-| Route       | Page            |
-|-------------|-----------------|
-| `/`         | Home (landing)  |
-| `/privacy`  | Privacy Policy  |
-| `/terms`    | Terms of Use    |
-
-The homepage is a single-page layout with sections: Hero, Features, SmartScan, Formats, Screenshots, WhyBeatFlow, About, Developer, Download, FAQ, and Footer.
-
-## Development
-
-```bash
-npm run dev      # Start dev server at https://localhost:8443
-npm run build    # Production build to dist/
-npm run preview  # Preview production build
-npm run format   # Format code with oxfmt
-```
-
-## Project Structure
-
-```
-BeatFlow-site/
-├── src/
-│   ├── components/    # Reusable sections (Hero, Features, FAQ, etc.)
-│   ├── pages/         # Route pages (PrivacyPolicy, TermsOfUse)
-│   ├── assets/        # Images (screenshots, developer photo)
-│   ├── imports/       # Imported assets (logo)
-│   ├── App.tsx        # Root component with routing
-│   ├── main.tsx       # Entry point
-│   └── index.css      # Global styles + Tailwind
-├── public/
-│   ├── BeatFlow.apk   # Downloadable APK
-│   └── logo.png       # Favicon
-├── index.html         # HTML shell
-├── vite.config.ts     # Vite config + Figma Make plugins
-├── tsconfig.json      # TypeScript config
-└── package.json       # Dependencies & scripts
-```
+A single-page website that introduces BeatFlow's features, design, and philosophy. The page communicates a privacy-first audio experience through a modern, dark-themed interface with smooth animations and rich visual detail.
 
 ## Features
 
-- **100% offline** — no internet required
-- **Zero tracking** — all data stays on-device
-- **Smart scan engine** — filters ringtones, duplicates, hidden files
-- **9+ audio formats** — MP3, FLAC, AAC, M4A, OGG, WAV, OPUS, AMR, 3GP
-- **Background playback**, sleep timer, playlists, queue, mini player, search, favorites, folder browser, notification & Bluetooth controls, theme customization
+- Premium responsive design with glassmorphism UI
+- Dark theme optimized for AMOLED displays
+- Mobile-first layout across all device sizes
+- Smooth scroll animations and reveal effects
+- App screenshot showcase with interactive preview
+- Download section with feature badges
+- Privacy-first messaging and brand storytelling
+- Frequently asked questions section
+- Performance-optimized assets and rendering
+- SEO-friendly semantic structure
 
-## License
+## Tech Stack
 
-Open source. Built by [Mohan Singh Parmar](https://github.com/monxcode).
+- HTML5
+- Tailwind CSS
+- Vanilla JavaScript
+
+## Design Philosophy
+
+The interface follows a minimal, modern aesthetic inspired by contemporary design trends. A dark backdrop with glassmorphism cards, subtle gradient accents, and cyan-purple color palette creates a premium feel. Typography combines Archivo Black for bold headings with Inter for clean body text. Every component is built mobile-first with fluid responsiveness.
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Samsung Internet (latest)
+
+## Project Status
+
+Actively maintained.
+
+## Author
+
+Mohan Singh Parmar
