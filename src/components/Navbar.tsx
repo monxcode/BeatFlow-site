@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '@/imports/logo.png'
 
 const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'Features', href: '#features' },
-  { label: 'Screenshots', href: '#screenshots' },
-  { label: 'Download', href: '#download' },
-  { label: 'Developer', href: '#developer' },
+  { label: 'Home', href: '/' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Screenshots', href: '/#screenshots' },
+  { label: 'Download', href: '/#download' },
+  { label: 'Developer', href: '/#developer' },
 ]
 
 export default function Navbar() {
@@ -18,6 +19,17 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const handleLinkClick = (href: string) => {
+    if (href.startsWith('/#')) {
+      const id = href.slice(2)
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setMenuOpen(false)
+  }
 
   return (
     <nav
@@ -40,18 +52,21 @@ export default function Navbar() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <img src={logo} alt="BeatFlow logo" style={{ width: 36, height: 36, objectFit: 'contain' }} />
-          <span style={{ fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '-0.3px' }}>
-            Beat<span style={{ color: '#7C3AED' }}>Flow</span>
-          </span>
+          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10, whiteSpace: 'nowrap' }}>
+            <img src={logo} alt="BeatFlow logo" style={{ width: 36, height: 36, objectFit: 'contain' }} />
+            <span style={{ fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '-0.3px' }}>
+              Beat<span style={{ color: '#7C3AED' }}>Flow</span>
+            </span>
+          </Link>
         </div>
 
         {/* Desktop links */}
         <div className="hidden md:flex" style={{ gap: 32 }}>
           {links.map((l) => (
-            <a
+            <Link
               key={l.label}
-              href={l.href}
+              to={l.href}
+              onClick={() => handleLinkClick(l.href)}
               style={{
                 color: '#A1A1AA',
                 fontSize: 14,
@@ -63,7 +78,7 @@ export default function Navbar() {
               onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href="https://github.com/monxcode/BeatFlow"
@@ -115,14 +130,14 @@ export default function Navbar() {
       {menuOpen && (
         <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.10)', display: 'flex', flexDirection: 'column', gap: 16 }}>
           {links.map((l) => (
-            <a
+            <Link
               key={l.label}
-              href={l.href}
-              onClick={() => setMenuOpen(false)}
+              to={l.href}
+              onClick={() => handleLinkClick(l.href)}
               style={{ color: '#A1A1AA', fontSize: 15, fontWeight: 500, textDecoration: 'none' }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href="/BeatFlow.apk"

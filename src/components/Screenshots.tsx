@@ -191,7 +191,7 @@ export default function Screenshots() {
           {screens.map((screen, index) => (
             <div
               key={screen.label}
-              ref={(el) => (phoneRefs.current[index] = el)}
+              ref={(el) => { phoneRefs.current[index] = el }}
               onClick={() => setActive(index)}
               onMouseEnter={() => setActive(index)}
               style={{

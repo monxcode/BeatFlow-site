@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
@@ -11,9 +12,24 @@ import Developer from './components/Developer'
 import DownloadSection from './components/DownloadSection'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfUse from './pages/TermsOfUse'
 
 export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  )
+}
+
+function AppContent() {
+  const location = useLocation()
   const [scrollProgress, setScrollProgress] = useState(0)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,15 +48,27 @@ export default function App() {
           if (e.isIntersecting) e.target.classList.add('visible')
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: '0px 0px 25% 0px' }
     )
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, [location.pathname])
 
   return (
     <div style={{ backgroundColor: '#09090B', minHeight: '100vh' }}>
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+      </Routes>
+    </div>
+  )
+}
+
+function HomePage() {
+  return (
+    <>
       <Navbar />
       <Hero />
       <Features />
@@ -53,6 +81,6 @@ export default function App() {
       <DownloadSection />
       <FAQ />
       <Footer />
-    </div>
+    </>
   )
 }

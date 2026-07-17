@@ -1,4 +1,5 @@
 import logo from '@/imports/logo.png'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -21,14 +22,14 @@ export default function Footer() {
             <div style={{ fontWeight: 700, fontSize: 13, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 16 }}>Quick Links</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {[
-                { label: 'Download', href: '#download' },
-                { label: 'Features', href: '#features' },
-                { label: 'Screenshots', href: '#screenshots' },
-                { label: 'Developer', href: '#developer' },
+                { label: 'Download', href: '/#download' },
+                { label: 'Features', href: '/#features' },
+                { label: 'Screenshots', href: '/#screenshots' },
+                { label: 'Developer', href: '/#developer' },
               ].map((l) => (
-                <a key={l.label} href={l.href} style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}>
+                <Link key={l.label} to={l.href} style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}>
                   {l.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -37,15 +38,32 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 700, fontSize: 13, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 16 }}>External</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {[
-                { label: 'GitHub', href: 'https://github.com/monxcode/BeatFlow' },
-                { label: 'Privacy Policy', href: '#' },
-                { label: 'Terms of Use', href: '#' },
-              ].map((l) => (
-                <a key={l.label} href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}>
-                  {l.label}
-                </a>
-              ))}
+              <a
+                href="https://github.com/monxcode/BeatFlow"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}
+              >
+                GitHub
+              </a>
+              <Link
+                to="/privacy"
+                style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                style={{ fontSize: 14, color: '#A1A1AA', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#A1A1AA')}
+              >
+                Terms of Use
+              </Link>
             </div>
           </div>
 
