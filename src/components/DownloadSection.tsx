@@ -44,7 +44,7 @@ export default function DownloadSection() {
           </div>
 
           <a
-            href="app/BeatFlow.apk"
+            href="/BeatFlow.apk"
             download="BeatFlow.apk"
             className="btn-primary ripple"
             style={{
