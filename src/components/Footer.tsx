@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <img src={logo} alt="BeatFlow logo" style={{ width: 36, height: 36, objectFit: 'contain' }} />
-              <span style={{ fontWeight: 700, fontSize: 18, color: '#fff' }}>Beat<span style={{ color: '#7C3AED' }}>Flow</span></span>
+              <span style={{ fontWeight: 800, fontSize: 18, color: '#fff' }}>Beat<span style={{ color: '#7C3AED' }}>Flow</span></span>
             </div>
             <p style={{ fontSize: 13, color: '#A1A1AA', lineHeight: 1.7, maxWidth: 220 }}>
               Premium offline music player for Android. Privacy first, always.

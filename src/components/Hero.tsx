@@ -73,12 +73,12 @@ export default function Hero() {
             </div>
 
             <h1
-              className="reveal"
+              className="reveal heading-font"
               style={{
                 fontSize: 'clamp(2.8rem, 6vw, 4.5rem)',
-                fontWeight: 800,
-                lineHeight: 1.1,
-                letterSpacing: '-1.5px',
+                fontWeight: 900,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
                 marginBottom: 24,
               }}
             >

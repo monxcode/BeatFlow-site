@@ -7,7 +7,7 @@ export default function AboutApp() {
           <span style={{ fontSize: 12, fontWeight: 600, color: '#22D3EE', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Privacy First</span>
         </div>
 
-        <h2 className="reveal" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 24 }}>
+        <h2 className="reveal heading-font" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 24 }}>
           Built for <span className="text-gradient">Privacy</span>
         </h2>
 
@@ -40,7 +40,7 @@ export default function AboutApp() {
                 }}
               >
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: 13, color: '#fff', marginBottom: 4 }}>{item.title}</div>
+                <div style={{ fontWeight: 800, fontSize: 13, color: '#fff', marginBottom: 4 }}>{item.title}</div>
                 <div style={{ fontSize: 12, color: '#A1A1AA' }}>{item.desc}</div>
               </div>
             ))}

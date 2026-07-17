@@ -17,7 +17,7 @@ export default function SmartScan() {
             <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 100, background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)', marginBottom: 20 }}>
               <span style={{ fontSize: 12, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Intelligent Scanning</span>
             </div>
-            <h2 className="reveal" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 16 }}>
+            <h2 className="reveal heading-font" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 16 }}>
               Smart Music<br /><span className="text-gradient">Scan Engine</span>
             </h2>
             <p className="reveal" style={{ color: '#A1A1AA', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
@@ -46,7 +46,7 @@ export default function SmartScan() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: '#fff', marginBottom: 4 }}>{f.title}</div>
+                  <div style={{ fontWeight: 800, fontSize: 14, color: '#fff', marginBottom: 4 }}>{f.title}</div>
                   <div style={{ fontSize: 13, color: '#A1A1AA', lineHeight: 1.5 }}>{f.desc}</div>
                 </div>
               </div>

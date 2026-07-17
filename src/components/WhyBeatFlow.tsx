@@ -14,7 +14,7 @@ export default function WhyBeatFlow() {
     <section style={{ padding: '100px 24px' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 60 }}>
-          <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
+          <h2 className="heading-font" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
             Why Choose <span className="text-gradient">BeatFlow?</span>
           </h2>
           <p style={{ color: '#A1A1AA', fontSize: 16 }}>Everything others charge for. Completely free.</p>

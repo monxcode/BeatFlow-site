@@ -36,7 +36,7 @@ function SectionHeading({ label }: { label: string }) {
       <div className="tu-icon-box" style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {scaleIcon}
       </div>
-      <h2 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.3px' }}>
+      <h2 style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)', fontWeight: 800, color: '#fff', letterSpacing: '-0.3px' }}>
         {label}
       </h2>
     </div>
@@ -647,12 +647,13 @@ export default function TermsOfUse() {
               </div>
 
               <h1
+                className="heading-font"
                 style={{
                   fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-                  fontWeight: 800,
-                  letterSpacing: '-1.5px',
+                  fontWeight: 900,
+                  letterSpacing: '-0.03em',
                   marginBottom: 16,
-                  lineHeight: 1.1,
+                  lineHeight: 1.05,
                 }}
               >
                 Terms of <span className="text-gradient">Use</span>

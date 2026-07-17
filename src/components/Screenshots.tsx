@@ -119,6 +119,7 @@ export default function Screenshots() {
           </div>
 
           <h2
+            className="heading-font"
             style={{
               fontSize: "clamp(2rem,4vw,3rem)",
               fontWeight: 800,
@@ -250,7 +251,7 @@ export default function Screenshots() {
                   textAlign: "center",
                   marginTop: 14,
                   fontSize: 14,
-                  fontWeight: 700,
+                  fontWeight: 800,
                   color: active === index ? "#fff" : "#A1A1AA",
                   transition: ".3s",
                 }}

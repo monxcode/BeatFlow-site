@@ -24,7 +24,7 @@ export default function Features() {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 100, background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.25)', marginBottom: 20 }}>
           <span style={{ fontSize: 12, fontWeight: 600, color: '#22D3EE', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Everything you need</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 16 }}>
+        <h2 className="heading-font" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 16 }}>
           Packed with <span className="text-gradient">Features</span>
         </h2>
         <p style={{ color: '#A1A1AA', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>
@@ -67,7 +67,7 @@ export default function Features() {
                 <path d={f.icon} />
               </svg>
             </div>
-            <div style={{ fontWeight: 700, fontSize: 14, color: '#fff', marginBottom: 4 }}>{f.label}</div>
+            <div style={{ fontWeight: 800, fontSize: 14, color: '#fff', marginBottom: 4 }}>{f.label}</div>
             <div style={{ fontSize: 12, color: '#A1A1AA', lineHeight: 1.5 }}>{f.desc}</div>
           </div>
         ))}

@@ -17,7 +17,7 @@ export default function Formats() {
     <section style={{ padding: '80px 24px' }}>
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
-          <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
+          <h2 className="heading-font" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
             Supported <span className="text-gradient">Formats</span>
           </h2>
           <p style={{ color: '#A1A1AA', fontSize: 16 }}>Play any audio format without conversion or extra apps.</p>

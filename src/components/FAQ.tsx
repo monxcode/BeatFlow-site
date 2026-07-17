@@ -18,7 +18,7 @@ export default function FAQ() {
     <section style={{ padding: '80px 24px' }}>
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
-          <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
+          <h2 className="heading-font" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.8px', marginBottom: 12 }}>
             Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
           <p style={{ color: '#A1A1AA', fontSize: 16 }}>Everything you need to know about BeatFlow.</p>
@@ -51,7 +51,7 @@ export default function FAQ() {
                   textAlign: 'left',
                 }}
               >
-                <span style={{ fontWeight: 600, fontSize: 15, color: '#fff' }}>{faq.q}</span>
+                <span style={{ fontWeight: 700, fontSize: 15, color: '#fff' }}>{faq.q}</span>
                 <div
                   style={{
                     width: 24,

@@ -150,6 +150,7 @@ export default function Developer() {
         }
 
         .dv-mobile-heading {
+          font-family: var(--ff-heading);
           font-size: clamp(1.8rem, 5vw, 2.2rem);
           font-weight: 900;
           letter-spacing: -1px;
@@ -428,6 +429,7 @@ export default function Developer() {
           }
 
           .dv-desk-heading {
+            font-family: var(--ff-heading);
             font-size: clamp(2.2rem, 3vw, 3.2rem);
             font-weight: 900;
             letter-spacing: -1.5px;
