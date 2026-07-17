@@ -154,8 +154,8 @@ export default function Hero() {
                 { label: 'Ads & Trackers', value: '0' },
               ].map((s) => (
                 <div key={s.label}>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#7C3AED' }}>{s.value}</div>
-                  <div style={{ fontSize: 13, color: '#A1A1AA', fontWeight: 500 }}>{s.label}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: s.label === 'Ads & Trackers' ? '#EF4444' : '#7C3AED' }}>{s.value}</div>
+                  <div style={{ fontSize: 13, color: s.label === 'Ads & Trackers' ? '#EF4444' : '#A1A1AA', fontWeight: 500 }}>{s.label}</div>
                 </div>
               ))}
             </div>
