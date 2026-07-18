@@ -22,7 +22,10 @@ export default function DownloadSection() {
 
           <img src={logo} alt="BeatFlow" style={{ width: 'clamp(80px, 10vw, 120px)', height: 'clamp(80px, 10vw, 120px)', objectFit: 'contain', margin: '0 auto 28px', display: 'block', filter: 'drop-shadow(0 0 30px rgba(0,200,100,0.45))' }} />
 
-          <div style={{ fontSize: 13, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 12 }}>Latest Version</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 12 }}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Latest Version</span>
+            <span style={{ fontSize: 11, fontWeight: 700, color: '#22D3EE', background: 'rgba(34,211,238,0.12)', border: '1px solid rgba(34,211,238,0.3)', borderRadius: 100, padding: '3px 10px', letterSpacing: '0.3px' }}>v1.0.1</span>
+          </div>
           <h2 className="heading-font" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-1px', marginBottom: 8 }}>
             BeatFlow
           </h2>
