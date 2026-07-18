@@ -53,24 +53,27 @@ export default function Hero() {
         >
           {/* Left content */}
           <div>
-            <div
-              className="reveal"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '6px 16px',
-                borderRadius: 100,
-                background: 'rgba(124,58,237,0.12)',
-                border: '1px solid rgba(124,58,237,0.3)',
-                marginBottom: 28,
-              }}
-            >
-              <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#7C3AED', animation: 'pulse-glow 2s infinite' }} />
-              <span style={{ fontSize: 12, fontWeight: 600, color: '#A78BFA', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
-                Now Available for Android
-              </span>
-            </div>
+              <div
+                className="reveal"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '6px 16px',
+                  borderRadius: 100,
+                  background: 'rgba(124,58,237,0.12)',
+                  border: '1px solid rgba(124,58,237,0.3)',
+                  marginBottom: 28,
+                  color: '#A78BFA',
+                }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}>
+                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5S5 15.33 5 14.5v-5C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5zM15.53 2.16l1.2-1.2a.5.5 0 00-.71-.71l-1.36 1.36C14 1.3 13.03 1 12 1s-2 .3-2.85.85L7.79.55a.5.5 0 00-.71.71l1.2 1.2A5.97 5.97 0 006 6.99V7h12v-.01c0-1.63-.66-3.12-1.71-4.22l1.24-1.23zM10 4.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zm4 0c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5z" />
+                </svg>
+                <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                  Now Available for Android
+                </span>
+              </div>
 
             <h1
               className="reveal heading-font"
